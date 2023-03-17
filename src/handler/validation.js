@@ -1,4 +1,9 @@
-const ValidationError = new Error();
+class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = 'ValidationError';
+  }
+}
 
 const validation = (
   name,
