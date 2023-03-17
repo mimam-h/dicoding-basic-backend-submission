@@ -24,6 +24,7 @@ const addNote = (request, h) => {
       message: error.message,
     });
     response.code(400);
+    return response;
   }
   let finished = false;
   const id = nanoid(16);
@@ -57,6 +58,7 @@ const addNote = (request, h) => {
       },
     });
     response.code(201);
+    return response;
   }
 };
 export default addNote;
