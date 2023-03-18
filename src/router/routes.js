@@ -1,13 +1,13 @@
 import post from './post.js';
 import get from './get.js';
 import put from './put.js';
-import delete from './delete.js';
+import remove from './delete.js';
 
 const routes = [
   post,
   ...get,
   put,
-  delete,
+  remove,
 ];
 
 export default routes;

@@ -4,7 +4,7 @@ const { deleteBookById } = handler;
 
 const remove = {
   method: 'DELETE',
-  path: '/notes/{bookId}',
+  path: '/books/{bookId}',
   handler: deleteBookById,
 };
 
