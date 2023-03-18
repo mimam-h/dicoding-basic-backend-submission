@@ -3,7 +3,7 @@ import get from './get.js';
 
 const routes = [
   post,
-  get,
+  ...get,
 ];
 
 export default routes;
