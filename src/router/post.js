@@ -1,9 +1,11 @@
-import addNote from '../handler/add.js';
+import handler from '../handler/handler.js';
+
+const { addBook } = handler;
 
 const post = {
   method: 'POST',
   path: '/books',
-  handler: addNote,
+  handler: addBook,
 };
 
 export default post;

@@ -1,7 +1,9 @@
-import addNote from './add.js';
+import addBook from './add.js';
+import getAllBook from './list.js';
 
 const handler = {
-  addNote,
+  addBook,
+  getAllBook,
 };
 
 export default handler;

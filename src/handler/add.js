@@ -4,8 +4,8 @@ import books from '../storage/books.js';
 
 import validation from './validation.js';
 
-// Add New Note
-const addNote = (request, h) => {
+// Add Book to Bookshelf
+const addBook = (request, h) => {
   const {
     name,
     year,
@@ -61,4 +61,4 @@ const addNote = (request, h) => {
     return response;
   }
 };
-export default addNote;
+export default addBook;
