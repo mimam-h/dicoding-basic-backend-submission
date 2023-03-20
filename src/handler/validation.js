@@ -14,9 +14,15 @@ const validation = (
   pageCount,
   readPage,
   reading,
+  purpose,
 ) => {
   if (typeof (name) !== 'string' || name === undefined || name.length === 0) {
-    throw new ValidationError('Gagal menambahkan buku. Mohon isi nama buku');
+    if (purpose === 'update') {
+      throw new ValidationError('Gagal memperbarui buku. Mohon isi nama buku');
+    }
+    if (purpose === 'add') {
+      throw new ValidationError('Gagal menambahkan buku. Mohon isi nama buku');
+    }
   }
   if (typeof (year) !== 'number' || year === undefined || year.length === 0) {
     throw new ValidationError('Gagal memproses permintaan.Mohon isi kolom Year dengan benar');
@@ -40,7 +46,12 @@ const validation = (
     throw new ValidationError('Gagal memproses permintaan.Mohon isi kolom reading dengan benar');
   }
   if (pageCount < readPage) {
-    throw new ValidationError('Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount');
+    if (purpose === 'update') {
+      throw new ValidationError('Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount');
+    }
+    if (purpose === 'add') {
+      throw new ValidationError('Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount');
+    }
   }
 };
 

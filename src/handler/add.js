@@ -6,6 +6,7 @@ import validation from './validation.js';
 
 // Add Book to Bookshelf
 const addBook = (request, h) => {
+  const purpose = 'add';
   const {
     name,
     year,
@@ -17,7 +18,7 @@ const addBook = (request, h) => {
     reading,
   } = request.payload;
   try {
-    validation(name, year, author, summary, publisher, pageCount, readPage, reading);
+    validation(name, year, author, summary, publisher, pageCount, readPage, reading, purpose);
   } catch (error) {
     const response = h.response({
       status: 'fail',

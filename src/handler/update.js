@@ -3,6 +3,7 @@ import validation from './validation.js';
 
 const editBookById = (request, h) => {
   let finished = false;
+  const purpose = 'update';
   const { bookId } = request.params;
   const {
     name,
@@ -15,7 +16,7 @@ const editBookById = (request, h) => {
     reading,
   } = request.payload;
   try {
-    validation(name, year, author, summary, publisher, pageCount, readPage, reading);
+    validation(name, year, author, summary, publisher, pageCount, readPage, reading, purpose);
   } catch (error) {
     const response = h.response({
       status: 'fail',

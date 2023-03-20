@@ -11,7 +11,7 @@ const getDetailById = (request, h) => {
       },
     });
     response.code(200);
-    return book;
+    return response;
   }
   const response = h.response({
     status: 'fail',
